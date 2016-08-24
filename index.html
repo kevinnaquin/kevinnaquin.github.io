@@ -1,183 +1,227 @@
 <!DOCTYPE html>
 <html lang = "en">
-        <head>
-                <meta charset = "utf-8">
-                <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-                <meta name = "viewport" content = "width=device-width, initial-scale = 1">
-                <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-                <title>KN: Photography</title>
+	<head>
+		<meta charset = "utf-8">
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+		<meta name = "viewport" content = "width=device-width, initial-scale = 1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>KN: Photography</title>
 
-                <!-- Bootstrap -->
-                <link rel = "stylesheet" href = "https://bootswatch.com/cyborg/bootstrap.min.css">
-                <style type = "text/css">
-                        :root { --div-size: 200px; }
+    		<!-- Bootstrap -->
+    		<link rel = "stylesheet" href = "https://bootswatch.com/cyborg/bootstrap.min.css"> 
+		<style type = "text/css">	
+			:root { --div-size: 200px; }
 
-                        .image {
-                                background-position: center;
-                                color: white;
-                                height: var(--div-size);
-                                left: 50%;
-                                opacity: 0;
-                                position: fixed;
-                                text-shadow: 2px 2px black;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                width: var(--div-size);
-                                z-index: 1000;
-                        }
+			.header {
+				font-weight: bold;
+				left: 0;
+				margin: 0;
+				position: fixed;
+				right: 0;
+				text-align: center;
+				top: 0;
+				width: 100%;
+				z-index: -1;
+			}
 
-                        .thumbnail-preview {
-                                background-position: center;
-                                box-shadow: 0px 0px 50px rgba(0, 0, 0, 1) inset;
-                                display: inline-block;
-                                height: var(--div-size);
-                                margin: 0;
-                                opacity: 1;
-                                overflow: hidden;
-                                vertical-align: top;
-                                width: var(--div-size);
-                        }
-                        .thumbnail-preview:hover { opacity: 0.5; }
+			.image {
+				background-position: center;
+				color: white;
+				height: var(--div-size);
+				left: 50%;
+				opacity: 0;
+				pointer-events: none;
+				position: fixed;
+				text-shadow: 2px 2px black;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: var(--div-size);
+				z-index: 1000; 
+			}
 
-                        .transition {
-                                -moz-transition: all 1s;
-                                transition: all 1s;
-                                -webkit-transition: all 1s;
-                        }
-                </style>
-        </head>
-        <body align = "center">
-                <div class = "container-fluid">
-                        <div class = "row"><i>KN: Photography</i></div>
-                        <div class = "row" id = "thumbnailContainer"></div>
-                        <div class = "image transition" id = "image" onclick = deselectImage() onmouseout = hideImageInfo() onmouseover = displayImageInfo()></div>
-                </div>
+			.thumbnail-preview { 
+				background-position: center;
+				box-shadow: 0px 0px 50px rgba(0, 0, 0, 1) inset;
+				display: inline-block;
+				height: var(--div-size);
+				margin: 0;
+				opacity: 1;
+				overflow: hidden;
+				vertical-align: top;
+				width: var(--div-size);
+			}
+			.thumbnail-preview:hover { opacity: 0.5; }
 
-                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-                <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                <!--<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>-->
-                <script type = "text/javascript">
-                        var kn = {};
+			.transition {
+				-moz-transition: all 1s;
+				transition: all 1s;
+				-webkit-transition: all 1s;
+			}
+		</style>
+  	</head>
+  	<body align = "center">
+		<div class = "container-fluid">
+    			<div class = "row">
+				<div class = "header"><i>KN Photography</i></div>
+			</div>
+			<div class = "row" id = "thumbnailContainer"></div>
+			<div class = "image transition" id = "image" onclick = deselectImage() onmouseout = hideImageInfo() onmouseover = displayImageInfo()></div>
+		</div>
 
-                        var images = [
-                                { f_stop: 5.6, hash_id: "9b7cyinppxol0e7", iso: 400,  name: "201002091953", shutter_speed: "1/60",   zoom: 55 },
-                                { f_stop: 1.4, hash_id: "ncw936hyruaqx3n", iso: 200,  name: "201003082132", shutter_speed: "1/80",   zoom: 50 },
-                                { f_stop: 11,  hash_id: "42pt71tj94yj47y", iso: 200,  name: "201003131608", shutter_speed: "1/320",  zoom: 18 },
-                                { f_stop: 20,  hash_id: "bcti9e60r9bhe9l", iso: 125,  name: "201003132359", shutter_speed: 13,       zoom: 18 },
-                                { f_stop: 5.6, hash_id: "fmorq15h1hmo3zc", iso: 200,  name: "201003141454", shutter_speed: "1/100",  zoom: 18 },
-                                { f_stop: 3.5, hash_id: "kk8s4h9aeeeaosn", iso: 320,  name: "201003151333", shutter_speed: "1/25",   zoom: 18 },
-                                { f_stop: 3.5, hash_id: "m8yoo058wcrme5c", iso: 800,  name: "201003192033", shutter_speed: "1/3",    zoom: 18 },
-                                { f_stop: 11,  hash_id: "13b1rpm2pp8xxw9", iso: 200,  name: "201003201140", shutter_speed: "1/400",  zoom: 18 },
-                                { f_stop: 5,   hash_id: "cge3ixki1h3evgw", iso: 200,  name: "201003201145", shutter_speed: "1/60",   zoom: 18 },
-                                { f_stop: 4,   hash_id: "jptgd1n93xyl6mx", iso: 800,  name: "201003261907", shutter_speed: "1/4",    zoom: 15 },
-                                { f_stop: 22,  hash_id: "lesppzvx6dd4dri", iso: 125,  name: "201004030854", shutter_speed: "1/13",   zoom: 18 },
-                                { f_stop: 9,   hash_id: "egnbouv7r1d0q6a", iso: 200,  name: "201004030905", shutter_speed: "1/125",  zoom: 32 },
-                                { f_stop: 6.3, hash_id: "7ujtxsx20i3u8j4", iso: 200,  name: "201004091537", shutter_speed: "1/100",  zoom: 18 },
-                                { f_stop: 5.6, hash_id: "4wr01qaowrfuywb", iso: 200,  name: "201004091548", shutter_speed: "1/320",  zoom: 55 },
-                                { f_stop: 5.6, hash_id: "3fcbc64jl5py9gy", iso: 200,  name: "201004091549", shutter_speed: "1/500",  zoom: 55 },
-                                { f_stop: 3.5, hash_id: "cufps29m7vukmxu", iso: 800,  name: "201004092046", shutter_speed: "1/3",    zoom: 18 },
-                                { f_stop: 3.5, hash_id: "10d28jrpmn5gjrv", iso: 800,  name: "201004092054", shutter_speed: "1/3",    zoom: 18 },
-                                { f_stop: 5.6, hash_id: "ldsg2e6xgog8omi", iso: 640,  name: "201004111804", shutter_speed: "1/200",  zoom: 200},
-                                { f_stop: 5.6, hash_id: "z6braysq41260wu", iso: 400,  name: "201005271217", shutter_speed: "1/60",   zoom: 55 },
-                                { f_stop: 3.5, hash_id: "2fb6ffb4dye1o8p", iso: 200,  name: "201005291210", shutter_speed: "1/1600", zoom: 18 },
-                                { f_stop: 3.5, hash_id: "xeqczprmn6inpe5", iso: 200,  name: "201005300736", shutter_speed: "1/500",  zoom: 18 },
-                                { f_stop: 3.5, hash_id: "dbd2qoo98lgvv59", iso: 1600, name: "201005301002", shutter_speed: "1/13",   zoom: 18 },
-                                { f_stop: 3.5, hash_id: "q3xm75yerensuye", iso: 800,  name: "201005310533", shutter_speed: "1/13",   zoom: 18 },
-                                { f_stop: 5,   hash_id: "df1kpel1bailxnw", iso: 400,  name: "201005311233", shutter_speed: "1/100",  zoom: 70 },
-                                { f_stop: 8,   hash_id: "sfkvaag1lnaang7", iso: 100,  name: "201006041115", shutter_speed: "1/160",  zoom: 18 },
-                                { f_stop: 4,   hash_id: "5swp27941pb6exb", iso: 100,  name: "201006050257", shutter_speed: "1/40",   zoom: 18 },
-                                { f_stop: 9,   hash_id: "47ye3ojlm1rw99t", iso: 400, name: "201006100937",  shutter_speed: "1/100",  zoom: 72 }
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    		<!--<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>-->
+		<script type = "text/javascript">
+			var kn = {};
 
-                                //{ f_stop: , hash_id: , iso: , name: , shutter_speed: , zoom: },
-                        ];
-                        // randomize the array
-                        images.sort(function() { return 0.5 - Math.random() });
+			$(document).ready(function() {
+				// randomize the images	
+				images.sort(function() { return 0.5 - Math.random() });
 
-                        $(document).ready(function() {
-                                $.each(
-                                        images,
-                                        function(i, x) {
-                                                var thumbnail = document.createElement("div");
-                                                $(thumbnail).addClass("thumbnail-preview");
-                                                $(thumbnail).addClass("transition");
-                                                $(thumbnail).attr("id", x.hash_id);
-                                                $(thumbnail).click(function() { selectImage(x); });
-                                                $(thumbnail).css("opacity", 0);
+				addThumbnails();
 
-                                                $("#thumbnailContainer").append(thumbnail);
-                                        }
-                                );
+				// load images only when they are in view				
+				$(window).resize(function() { deferedImageLoad(); });
+				$(window).scroll(function() { deferedImageLoad(); });
+				deferedImageLoad();
+			});
 
-                                $(window).resize(function() { deferedImageLoad(); });
-                                $(window).scroll(function() { deferedImageLoad(); });
-                                deferedImageLoad();
-                        });
+			function addThumbnails() {
+				$.each(
+					images,
+					function(i, x) {
+						var thumbnail = document.createElement("div");
+						$(thumbnail).addClass("thumbnail-preview");
+						$(thumbnail).addClass("transition");
+						$(thumbnail).attr("id", x.hash_id);
+						$(thumbnail).click(function() { selectImage(x); });
+						$(thumbnail).css("opacity", 0);
 
-                        function deferedImageLoad() {
-                                var windowTop = $(window).scrollTop();
-                                var windowBottom = windowTop + $(window).height();
-                                $.each(
-                                        images,
-                                        function(i, x) {
-                                                var thumbnail = $("#" + x.hash_id);
-                                                var offset = $(thumbnail).offset();
-                                                var divTop = offset.top;
-                                                var divBottom = divTop + $(thumbnail).height();
+						$("#thumbnailContainer").append(thumbnail);
+					}
+				);
+			}
 
-                                                if (!(divBottom < windowTop) && !(windowBottom < divTop)) {
-                                                        if ($(thumbnail).css("backgroundImage") == "none") {
-                                                                loadImage(x);
-                                                        }
-                                                }
-                                        }
-                                );
-                        }
+			function deferedImageLoad() {
+				var windowTop = $(window).scrollTop();
+				var windowBottom = windowTop + $(window).height();
+				$.each(
+					images,
+					function(i, x) {
+						var thumbnail = $("#" + x.hash_id);
+						var offset = $(thumbnail).offset();
+						var divTop = offset.top;
+						var divBottom = divTop + $(thumbnail).height();
+						
+						if (!(divBottom < windowTop) && !(windowBottom < divTop)) {
+							if ($(thumbnail).css("backgroundImage") == "none") { 
+								loadImage(x);
+							}
+						}
+					}
+				);
+			}
 
-                        function deselectImage() {
-                                var image_full = $("#image");
-                                $(image_full).css("height", "");
-                                $(image_full).css("opacity", "");
-                                $(image_full).css("width", "");
+			function deselectImage() {
+				var image_full = $("#image");
+				$(image_full).css("height", "");
+				$(image_full).css("opacity", "");
+				$(image_full).css("pointerEvents", "none");
+				$(image_full).css("width", "");
 
-                                $.each(images, function(i, x) { $("#" + x.hash_id).css("opacity", ""); });
-                        }
+				$.each(images, function(i, x) { $("#" + x.hash_id).css("opacity", ""); });
+			}
 
-                        function displayImageInfo() {
-                                var image = kn.selectedImage;
-                                $("#image").html(["f/" + image.f_stop, image.shutter_speed, image.zoom + "mm", "ISO" + image.iso].join(" "));
-                        }
+			function displayImageInfo() {
+				var image = kn.selectedImage;
+				$("#image").html([
+					"f/" + image.f_stop, 
+					image.shutter_speed, 
+					image.zoom + "mm", 
+					"ISO" + image.iso
+				].join(" "));
+			}
 
-                        function hideImageInfo() { $("#image").html(""); }
+			function hideImageInfo() { $("#image").html(""); }
 
-                        function loadImage(image) {
-                                var img = new Image();
-                                $(img).load(function() {
-                                        image.height = this.height;
-                                        image.width = this.width;
+			function loadImage(image) {
+				var img = new Image();
+				$(img).load(function() {
+					image.height = this.height;
+					image.width = this.width;
 
-                                        var thumbnail = $("#" + image.hash_id);
-                                        $(thumbnail).css("backgroundImage", "url('" + $(this).attr("src") + "')");
-                                        $(thumbnail).css("opacity", "");
-                                });
-                                $(img).attr("src", "https://dl.dropboxusercontent.com/s/" + image.hash_id + "/" + image.name + ".JPG");
-                        }
+					var thumbnail = $("#" + image.hash_id);
+					$(thumbnail).css("backgroundImage", "url('" + $(this).attr("src") + "')");
+					$(thumbnail).css("opacity", "");
+				});
+				$(img).attr("src", "https://dl.dropboxusercontent.com/s/" + image.hash_id + "/" + image.name + ".JPG");
+			}
 
-                        function selectImage(image) {
-                                kn.selectedImage = image;
+			function selectImage(image) {
+				kn.selectedImage = image;
 
-                                var thumbnail = $("#" + image.hash_id);
+				var thumbnail = $("#" + image.hash_id);
 
-                                var background_image = $(thumbnail).css("backgroundImage");
-                                var image_full = $("#image");
-                                $(image_full).css("backgroundImage", background_image);
-                                $(image_full).css("height", image.height);
-                                $(image_full).css("opacity", 1);
-                                $(image_full).css("width", image.width);
+				var background_image = $(thumbnail).css("backgroundImage");
+				var image_full = $("#image");
+				$(image_full).css("backgroundImage", background_image);
+				$(image_full).css("height", image.height);
+				$(image_full).css("opacity", 1);
+				$(image_full).css("pointerEvents", "auto");
+				$(image_full).css("width", image.width);
 
-                                $.each(images, function(i, x) { $("#" + x.hash_id).css("opacity", 0.1); });
+				$.each(images, function(i, x) { $("#" + x.hash_id).css("opacity", 0); });
 
-                                $(thumbnail).css("opacity", 0);
-                        }
-                </script>
-        </body>
+				$(thumbnail).css("opacity", 0);
+			}
+
+			var images = [
+				{ f_stop: 5.6, hash_id: "9b7cyinppxol0e7", iso: 400,  name: "201002091953",   shutter_speed: "1/60",   zoom: 55  },
+				{ f_stop: 1.4, hash_id: "ncw936hyruaqx3n", iso: 200,  name: "201003082132",   shutter_speed: "1/80",   zoom: 50  },
+				{ f_stop: 11,  hash_id: "42pt71tj94yj47y", iso: 200,  name: "201003131608",   shutter_speed: "1/320",  zoom: 18  },
+				{ f_stop: 20,  hash_id: "bcti9e60r9bhe9l", iso: 125,  name: "201003132359",   shutter_speed: 13,       zoom: 18  },
+				{ f_stop: 5.6, hash_id: "fmorq15h1hmo3zc", iso: 200,  name: "201003141454",   shutter_speed: "1/100",  zoom: 18  },
+				{ f_stop: 3.5, hash_id: "kk8s4h9aeeeaosn", iso: 320,  name: "201003151333",   shutter_speed: "1/25",   zoom: 18  },
+				{ f_stop: 3.5, hash_id: "m8yoo058wcrme5c", iso: 800,  name: "201003192033",   shutter_speed: "1/3",    zoom: 18  },
+				{ f_stop: 11,  hash_id: "13b1rpm2pp8xxw9", iso: 200,  name: "201003201140",   shutter_speed: "1/400",  zoom: 18  },
+				{ f_stop: 5,   hash_id: "cge3ixki1h3evgw", iso: 200,  name: "201003201145",   shutter_speed: "1/60",   zoom: 18  },
+				{ f_stop: 4,   hash_id: "jptgd1n93xyl6mx", iso: 800,  name: "201003261907",   shutter_speed: "1/4",    zoom: 15  },
+				{ f_stop: 22,  hash_id: "lesppzvx6dd4dri", iso: 125,  name: "201004030854",   shutter_speed: "1/13",   zoom: 18  },
+				{ f_stop: 9,   hash_id: "egnbouv7r1d0q6a", iso: 200,  name: "201004030905",   shutter_speed: "1/125",  zoom: 32  },
+				{ f_stop: 6.3, hash_id: "7ujtxsx20i3u8j4", iso: 200,  name: "201004091537",   shutter_speed: "1/100",  zoom: 18  },
+				{ f_stop: 5.6, hash_id: "4wr01qaowrfuywb", iso: 200,  name: "201004091548",   shutter_speed: "1/320",  zoom: 55  },
+				{ f_stop: 5.6, hash_id: "3fcbc64jl5py9gy", iso: 200,  name: "201004091549",   shutter_speed: "1/500",  zoom: 55  },
+				{ f_stop: 3.5, hash_id: "cufps29m7vukmxu", iso: 800,  name: "201004092046",   shutter_speed: "1/3",    zoom: 18  },
+				{ f_stop: 3.5, hash_id: "10d28jrpmn5gjrv", iso: 800,  name: "201004092054",   shutter_speed: "1/3",    zoom: 18  },
+				{ f_stop: 5.6, hash_id: "ldsg2e6xgog8omi", iso: 640,  name: "201004111804",   shutter_speed: "1/200",  zoom: 200 },
+				{ f_stop: 5.6, hash_id: "z6braysq41260wu", iso: 400,  name: "201005271217",   shutter_speed: "1/60",   zoom: 55  },
+				{ f_stop: 3.5, hash_id: "2fb6ffb4dye1o8p", iso: 200,  name: "201005291210",   shutter_speed: "1/1600", zoom: 18  },
+				{ f_stop: 3.5, hash_id: "xeqczprmn6inpe5", iso: 200,  name: "201005300736",   shutter_speed: "1/500",  zoom: 18  },
+				{ f_stop: 3.5, hash_id: "dbd2qoo98lgvv59", iso: 1600, name: "201005301002",   shutter_speed: "1/13",   zoom: 18  },
+				{ f_stop: 3.5, hash_id: "q3xm75yerensuye", iso: 800,  name: "201005310533",   shutter_speed: "1/13",   zoom: 18  },
+				{ f_stop: 5,   hash_id: "df1kpel1bailxnw", iso: 400,  name: "201005311233",   shutter_speed: "1/100",  zoom: 70  },
+				{ f_stop: 8,   hash_id: "sfkvaag1lnaang7", iso: 100,  name: "201006041115",   shutter_speed: "1/160",  zoom: 18  },
+				{ f_stop: 4,   hash_id: "5swp27941pb6exb", iso: 100,  name: "201006050257",   shutter_speed: "1/40",   zoom: 18  },
+				{ f_stop: 9,   hash_id: "47ye3ojlm1rw99t", iso: 400,  name: "201006100937",   shutter_speed: "1/100",  zoom: 72  },
+				{ f_stop: 3.5, hash_id: "mrx4pajuosn6wgv", iso: 125,  name: "201006120426",   shutter_speed: "1/30",   zoom: 18  },
+				{ f_stop: 6.3, hash_id: "j1g5zl0htl0s75n", iso: 100,  name: "201006120433",   shutter_speed: "1/100",  zoom: 55  },
+				{ f_stop: 5.6, hash_id: "inc4il33f4m8mv5", iso: 1250, name: "201006120437",   shutter_speed: "1/80",   zoom: 55  },
+				{ f_stop: 7.1, hash_id: "4e58b0vt9yl2ic1", iso: 100,  name: "201006120446",   shutter_speed: "1/160",  zoom: 40  },
+				{ f_stop: 5.6, hash_id: "qmwfx375b770tyl", iso: 200,  name: "201006120449__", shutter_speed: "1/100",  zoom: 55  },
+				{ f_stop: 5.6, hash_id: "u7enswfukcn2mje", iso: 500,  name: "201006120449_",  shutter_speed: "1/100",  zoom: 55  },
+				{ f_stop: 6.3, hash_id: "z6wewhutbpqp239", iso: 100,  name: "201006120449",   shutter_speed: "1/100",  zoom: 55  },
+				{ f_stop: 5.6, hash_id: "olej8mr0dmle2nq", iso: 200,  name: "201006120505",   shutter_speed: "1/100",  zoom: 55  },
+				{ f_stop: 8,   hash_id: "ph9aljx3tfzbk2r", iso: 100,  name: "201006120507",   shutter_speed: "1/160",  zoom: 18  },
+				{ f_stop: 7.1, hash_id: "qb2bm62rb2ctjl4", iso: 100,  name: "201006130343",   shutter_speed: "1/125",  zoom: 33  },
+				{ f_stop: 4.5, hash_id: "lm3t3k4i3jz5h0x", iso: 160,  name: "201006301755",   shutter_speed: "1/1250", zoom: 9   },
+				{ f_stop: 5.6, hash_id: "4ytst96n3s8r6j0", iso: 6400, name: "201009042236",   shutter_speed: "1/30",   zoom: 130 },
+				{ f_stop: 3.5, hash_id: "1x48t3z8099klwp", iso: 160,  name: "201010240917",   shutter_speed: "1/30",   zoom: 18  },
+				{ f_stop: 9,   hash_id: "wtsva46838nublx", iso: 100,  name: "201010241009",   shutter_speed: "1/200",  zoom: 18  },
+				{ f_stop: 5,   hash_id: "exm2skjfcc7x1th", iso: 100,  name: "201012291132",   shutter_speed: "1/80",   zoom: 18  },
+				{ f_stop: 8,   hash_id: "dguheja0jbcv15a", iso: 100,  name: "201012291517",   shutter_speed: "1/200",  zoom: 28  },
+				{ f_stop: 7.1, hash_id: "qbfije3m2ta5tp5", iso: 100,  name: "201012291520",   shutter_speed: "1/125",  zoom: 28  }
+				//{ f_stop: , hash_id: "", iso: , name: "", shutter_speed: "", zoom: },
+			];
+		</script>
+  	</body>
 </html>
