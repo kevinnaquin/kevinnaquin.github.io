@@ -66,7 +66,7 @@
 	{ "f_stop": 9,   "filters": [], "hash_id": "5v3y97s34kvzur6", "iso": 800,  "name": "201210201113",   "shutter_speed": "1/250",  "zoom": 32  },
 	{ "f_stop": 8,   "filters": [], "hash_id": "o7dxg6yk7q0twsm", "iso": 160,  "name": "201210201118",   "shutter_speed": "1/200",  "zoom": 130 },
 	{ "f_stop": 6.3, "filters": [], "hash_id": "01daek256mbakpn", "iso": 2000, "name": "201210201142",   "shutter_speed": "1/60",   "zoom": 100 },
-	{ "f_stop": 5.6  "filters": [], "hash_id": "043n7qmu08phynq", "iso": 640,  "name": "201210201202",   "shutter_speed": "1/125",  "zoom": 200 },
+	{ "f_stop": 5.6,  "filters": [], "hash_id": "043n7qmu08phynq", "iso": 640,  "name": "201210201202",   "shutter_speed": "1/125",  "zoom": 200 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "s3xn2bpcjq24yx2", "iso": 500,  "name": "201210201320",   "shutter_speed": "1/125",  "zoom": 200 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "5wy4wsuf3pty2l4", "iso": 5000, "name": "201210201422",   "shutter_speed": "1/200",  "zoom": 155 }
 ]
