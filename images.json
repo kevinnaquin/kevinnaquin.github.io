@@ -66,7 +66,7 @@
 	{ "f_stop": 9,   "filters": [], "hash_id": "5v3y97s34kvzur6", "iso": 800,  "name": "201210201113",   "shutter_speed": "1/250",  "zoom": 32  },
 	{ "f_stop": 8,   "filters": [], "hash_id": "o7dxg6yk7q0twsm", "iso": 160,  "name": "201210201118",   "shutter_speed": "1/200",  "zoom": 130 },
 	{ "f_stop": 6.3, "filters": [], "hash_id": "01daek256mbakpn", "iso": 2000, "name": "201210201142",   "shutter_speed": "1/60",   "zoom": 100 },
-	{ "f_stop": 5.6,  "filters": [], "hash_id": "043n7qmu08phynq", "iso": 640,  "name": "201210201202",   "shutter_speed": "1/125", "zoom": 200 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "043n7qmu08phynq", "iso": 640,  "name": "201210201202",   "shutter_speed": "1/125",  "zoom": 200 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "s3xn2bpcjq24yx2", "iso": 500,  "name": "201210201320",   "shutter_speed": "1/125",  "zoom": 200 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "5wy4wsuf3pty2l4", "iso": 5000, "name": "201210201422",   "shutter_speed": "1/200",  "zoom": 155 },
 	{ "f_stop": 7.1, "filters": [], "hash_id": "ld0qot6h9utekbh", "iso": 100,  "name": "201302111209",   "shutter_speed": "1/125",  "zoom": 100 },
@@ -91,5 +91,16 @@
 	{ "f_stop": 5.6, "filters": [], "hash_id": "n55ansdfagzr3dd", "iso": 100,  "name": "201402231651_",  "shutter_speed": "1/320",  "zoom": 187 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "r7855e6ft8nddz7", "iso": 100,  "name": "201402231651",   "shutter_speed": "1/250",  "zoom": 187 },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "u2c653eytnfsvhc", "iso": 1600, "name": "201402231657",   "shutter_speed": "1/250",  "zoom": 200 },
-	{ "f_stop": 5.6, "filters": [], "hash_id": "91593y4a6m1mh5b", "iso": 5000, "name": "201402231818",   "shutter_speed": "1/250",  "zoom": 185 }
+	{ "f_stop": 5.6, "filters": [], "hash_id": "91593y4a6m1mh5b", "iso": 5000, "name": "201402231818",   "shutter_speed": "1/250",  "zoom": 185 },
+	{ "f_stop": 16,  "filters": [], "hash_id": "hl5j6h53l90k1a9", "iso": 100,  "name": "201404070922",   "shutter_speed": "1/30",   "zoom": 12  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "jbzfyrodz5kiag5", "iso": 100,  "name": "201404070949",   "shutter_speed": "1/80",   "zoom": 20  },
+	{ "f_stop": 7.1, "filters": [], "hash_id": "wiv4n39nbdijmfs", "iso": 100,  "name": "201404121641",   "shutter_speed": "1/200",  "zoom": 90  },
+	{ "f_stop": 8,   "filters": [], "hash_id": "373m6kmj9l7lgn8", "iso": 100,  "name": "201404121645_",  "shutter_speed": "1/160",  "zoom": 50  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "beauwal5zvbxi4u", "iso": 125,  "name": "201404121645",   "shutter_speed": "1/100",  "zoom": 70  },
+	{ "f_stop": 7.1, "filters": [], "hash_id": "27qd2e8h41w669a", "iso": 100,  "name": "201404121709",   "shutter_speed": "1/320",  "zoom": 80  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "z38lot0qsq3z809", "iso": 5000, "name": "201404121829",   "shutter_speed": "1/320",  "zoom": 200 },
+	{ "f_stop": 11,  "filters": [], "hash_id": "uwklm8xdc42w2ex", "iso": 2500, "name": "201404121832",   "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 11,  "filters": [], "hash_id": "lr1dioaazawkpm9", "iso": 4000, "name": "201404121905_",  "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 11,  "filters": [], "hash_id": "2k6bsk23khd1fae", "iso": 3200, "name": "201404121905",   "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 11,  "filters": [], "hash_id": "mdjohad7xt513z2", "iso": 5000, "name": "201404121906",   "shutter_speed": "1/320",  "zoom": 200 }
 ]
