@@ -82,5 +82,14 @@
 	{ "f_stop": 4,   "filters": [], "hash_id": "k8yndlj3rc0n0p4", "iso": 100,  "name": "201306221348",   "shutter_speed": "1/15",   "zoom": 20  },
 	{ "f_stop": 5.6, "filters": [], "hash_id": "onk9wz75oybqmto", "iso": 100,  "name": "201306221447",   "shutter_speed": "1/15",   "zoom": 18  },
 	{ "f_stop": 4,   "filters": [], "hash_id": "czuwvx4rb8zorrl", "iso": 4000, "name": "201312251256",   "shutter_speed": "1/80",   "zoom": 10  },
-	{ "f_stop": 5.6, "filters": [], "hash_id": "xmm7gboyq824rkz", "iso": 640,  "name": "201402231536",   "shutter_speed": "1/250",  "zoom": 200 }
+	{ "f_stop": 5.6, "filters": [], "hash_id": "xmm7gboyq824rkz", "iso": 640,  "name": "201402231536",   "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "50rdn7u27xupi9f", "iso": 6400, "name": "201402231623",   "shutter_speed": "1/50",   "zoom": 160 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "xyi67o5egc9uytb", "iso": 640,  "name": "201402231644",   "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 7.1, "filters": [], "hash_id": "zm7aaj809v0ctbk", "iso": 100,  "name": "201402231650_",  "shutter_speed": "1/250",  "zoom": 120 },
+	{ "f_stop": 6.3, "filters": [], "hash_id": "4n0bbon4gwtkj36", "iso": 100,  "name": "201402231650",   "shutter_speed": "1/250",  "zoom": 135 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "c5khaoxrlcjxawz", "iso": 100,  "name": "201402231651__", "shutter_speed": "1/250",  "zoom": 187 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "n55ansdfagzr3dd", "iso": 100,  "name": "201402231651_",  "shutter_speed": "1/320",  "zoom": 187 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "r7855e6ft8nddz7", "iso": 100,  "name": "201402231651",   "shutter_speed": "1/250",  "zoom": 187 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "u2c653eytnfsvhc", "iso": 1600, "name": "201402231657",   "shutter_speed": "1/250",  "zoom": 200 },
+	{ "f_stop": 5.6, "filters": [], "hash_id": "91593y4a6m1mh5b", "iso": 5000, "name": "201402231818",   "shutter_speed": "1/250",  "zoom": 185 }
 ]
