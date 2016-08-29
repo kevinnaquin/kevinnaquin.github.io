@@ -3,6 +3,7 @@ var images;
 
 $(document).ready(function() {
 	$.ajax({
+		cache: false,
 		dataType: "json",
 		success: function(data) {
 			images = data;
