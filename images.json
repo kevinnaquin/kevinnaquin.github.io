@@ -127,5 +127,14 @@
 	{ "f_stop": 8,   "filters": [], "hash_id": "dtg779hfhr4p1o0", "iso": 100,   "name": "201510041115",   "shutter_speed": "1/200",  "zoom": 50  },
 	{ "f_stop": 6.3, "filters": [], "hash_id": "ree24i9mkf0l0k0", "iso": 100,   "name": "201510041129",   "shutter_speed": "1/160",  "zoom": 60  },
 	{ "f_stop": 4,   "filters": [], "hash_id": "wh79p6k16ch0y9j", "iso": 1250,  "name": "201510041839",   "shutter_speed": "1/60",   "zoom": 35  },
-	{ "f_stop": 4.5, "filters": [], "hash_id": "jg2nc89fpob8khr", "iso": 1250,  "name": "201510041856",   "shutter_speed": "1/50",   "zoom": 35  }
+	{ "f_stop": 4.5, "filters": [], "hash_id": "jg2nc89fpob8khr", "iso": 1250,  "name": "201510041856",   "shutter_speed": "1/50",   "zoom": 35  },
+	{ "f_stop": 5  , "filters": [], "hash_id": "lz6sbupithwzruz", "iso": 6400,  "name": "201512051821",   "shutter_speed": "1/80",   "zoom": 70  },
+	{ "f_stop": 7.1, "filters": [], "hash_id": "nmnsmbrmq6luhdi", "iso": 100,   "name": "201601301143",   "shutter_speed": "1/125",  "zoom": 24  },
+	{ "f_stop": 10,  "filters": [], "hash_id": "5xzj9nszal2e8kh", "iso": 100,   "name": "201601301225",   "shutter_speed": "1/320",  "zoom": 40  },
+	{ "f_stop": 10,  "filters": [], "hash_id": "se9k8ri59jqcttv", "iso": 100,   "name": "201601301342",   "shutter_speed": "1/320",  "zoom": 20  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "3z74br5wo3jn1ya", "iso": 100,   "name": "201601301418",   "shutter_speed": "1/500",  "zoom": 70  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "ejdqeie0ayocy8k", "iso": 100,   "name": "201601301426_",  "shutter_speed": "1/400",  "zoom": 18  },
+	{ "f_stop": 11,  "filters": [], "hash_id": "7c5wq0hitxlmht3", "iso": 100,   "name": "201601301426",   "shutter_speed": "1/400",  "zoom": 32  },
+	{ "f_stop": 10,  "filters": [], "hash_id": "yf9m1m4ye0i4kk5", "iso": 100,   "name": "201601301635",   "shutter_speed": "1/400",  "zoom": 90  },
+	{ "f_stop": 9,   "filters": [], "hash_id": "akt5fssrs9uxti1", "iso": 100,   "name": "201601301646",   "shutter_speed": "1/320",  "zoom": 70  }
 ]
