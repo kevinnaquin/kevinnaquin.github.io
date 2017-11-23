@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Sprint Planning</title>
+		<!-- Required meta tags -->
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel = "stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+		<style type = "text/css">
+			html, body, .container-fluid {
+				height: 100%;
+			}
+			.point-buttons {
+				height: 100%;
+				text-align: center;
+				transform: translate(0%, 50%);
+			}
+
+			.dialog {
+				background-color: rgba(0,0,0,0.9);
+				color: white;
+				display: flex;
+				flex-direction: column;
+				font-size: 50vw;
+				height: 100%;
+				justify-content: center;
+				left: 0;
+				overflow-x: hidden;
+				position: fixed;
+				text-align: center;
+				top: 0;
+				vertical-align: middle;
+				width: 0;
+				z-index: 2147483646;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "container-fluid">
+			<div class = "point-buttons">
+				<button class = "btn btn-primary" onclick = displayPoints(1)>&nbsp;1</button>
+				<button class = "btn btn-primary" onclick = displayPoints(3)>&nbsp;3</button>
+				<button class = "btn btn-primary" onclick = displayPoints(5)>&nbsp;5</button>
+				<button class = "btn btn-primary" onclick = displayPoints(8)>&nbsp;8</button>
+				<button class = "btn btn-primary" onclick = displayPoints(13)>13</button>
+			</div>
+		</div>
+
+		<div class = "dialog">0</div>
+
+		
+		<script src = "https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script type = "text/javascript">
+			$( document ).ready( function() {
+				$( document ).on(
+					"keydown",
+					function( event ) {
+						var keyCode = event.keyCode;
+						switch( keyCode ) {
+							// esc key
+							case 27:
+								$( ".dialog" ).css( "width", "0%" );
+								break;
+						}
+					}
+				);
+			});
+
+			function displayPoints( points ) {
+				$( ".dialog" ).css( "width", "100%" );
+				$( ".dialog" ).html( points );
+			}
+		</script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
