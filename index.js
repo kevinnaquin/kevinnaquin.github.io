@@ -107,22 +107,6 @@ function fastForward() {
 	selectImage(images[index], index);
 }
 
-function filterImages(filter) {
-	if (filter == "all") { 
-		$.each(images, function(i, x) { $("#" + x.hash_id).css("display", ""); }); 
-	}
-	else {
-		$.each(
-			images,
-			function(i, x) {
-				var thumbnail = $("#" + x.hash_id);
-				if (x.filters.indexOf(filter) > -1) {$(thumbnail).css("display", "");  }
-				else { $(thumbnail).css("display", "none"); }
-			}
-		);
-	}
-}
-
 function loadImage(image) {
 	var img = new Image();
 	$(img).load(function() {
