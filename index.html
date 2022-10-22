@@ -34,9 +34,7 @@
                         displayCharacter();
                     }
                 }
-                document.body.touchstart = function( event ) {
-                    displayCharacter();
-                }
+                document.body.addEventlistener( 'touchstart', displayCharacter );
             }
         </script>
     </head>
