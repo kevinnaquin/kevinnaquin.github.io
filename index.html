@@ -34,11 +34,10 @@
                         displayCharacter();
                     }
                 }
-                document.body.addEventlistener( 'touchstart', displayCharacter );
             }
         </script>
     </head>
-    <body onload = "pageLoad()"">
+    <body onload = "pageLoad()" ontouchstart = "displayCharacter()">
         <div id = "body"></div>
     </body>
 </html>
