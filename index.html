@@ -35,11 +35,13 @@
                     }
                 }
                 
-                document.body.addEventListener('touchstart', displayCharacter, false);
+                document.body.addEventListener( 'touchstart', displayCharacter, false );
+                
+                displayCharacter();
             }
         </script>
     </head>
     <body onload = "pageLoad()">
-        <p id = "body" ontouchstart="displayCharacter()">Touch me!</p>
+        <p id = "body" ontouchstart = "displayCharacter()"></p>
     </body>
 </html>
