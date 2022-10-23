@@ -8,7 +8,7 @@
                 position: absolute;
                 top: 50%;
                 transform: translate( -50%, -50% );
-                font-size: 100vh;
+                font-size: 90vh;
             }
         </style>
         <script>
@@ -25,23 +25,14 @@
                 document.getElementById( 'body' ).innerHTML = character;
 
                 alphanumericCharacters.splice( alphanumericCharacterIndex, 1 );
-                console.dir(alphanumericCharacters);
             }
 
             function pageLoad() {
-                document.body.onkeyup = function( event ) {
-                    if ( event.key == " " || event.code == "Space" || event.keyCode == 32 ) {
-                        displayCharacter();
-                    }
-                }
-                
-                document.body.addEventListener( 'touchstart', displayCharacter, false );
-                
                 displayCharacter();
             }
         </script>
     </head>
     <body onload = "pageLoad()">
-        <p id = "body" ontouchstart = "displayCharacter()"></p>
+        <div id = "body" onclick = "displayCharacter()"></div>
     </body>
 </html>
