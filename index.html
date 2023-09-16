@@ -8,31 +8,34 @@
                 font-family: 'Motiva Sans', sans-serif;
             }
 
-            body, #body, html {
+            body, html {
                 background-color: black;
                 color: white;
+                font-size: 50vh;
                 height: 100%;
+                margin: 0;
+                overflow: hidden;
+                padding: 0;
                 width: 100%;
             }
-            
-            #body {
+
+            div {
                 left: 50%;
                 position: absolute;
                 top: 50%;
                 transform: translate( -50%, -50% );
-                font-size: 70vh;
             }
         </style>
         <script>
             let alphanumericCharacters = [
-                'a',       'about',  'also',   'and',     'another', 'any',    'are',  'as',    'be',    'been',  'being', 
-                'between', 'by',     'called', 'come',    'could',   'day',    'do',   'does',  'down',  'each',  'first', 
-                'for',     'friend', 'from',   'good',    'has',     'have',   'he',   'her',   'here',  'his',   'how', 
-                'I',       'into',   'is',     'little',  'look',    'many',   'may',  'me',    'month', 'Mr.',   'Mrs.', 
-                'my',      'new',    'none',   'nothing', 'now',     'number', 'of',   'one',   'or',    'other', 'our', 
-                'out',     'over',   'own',    'people',  'put',     'say',    'says', 'said',  'see',   'she',   'should', 
-                'some',    'the',    'their',  'there',   'they',    'to',     'too',  'try',   'two',   'very',  'want', 
-                'was',     'water',  'way',    'we',      'were',    'what',   'when', 'where', 'who',   'why',   'word', 
+                'a',       'about',  'also',   'and',     'another', 'any',    'are',  'as',    'be',    'been',  'being',
+                'between', 'by',     'called', 'come',    'could',   'day',    'do',   'does',  'down',  'each',  'first',
+                'for',     'friend', 'from',   'good',    'has',     'have',   'he',   'her',   'here',  'his',   'how',
+                'I',       'into',   'is',     'little',  'look',    'many',   'may',  'me',    'month', 'Mr.',   'Mrs.',
+                'my',      'new',    'none',   'nothing', 'now',     'number', 'of',   'one',   'or',    'other', 'our',
+                'out',     'over',   'own',    'people',  'put',     'say',    'says', 'said',  'see',   'she',   'should',
+                'some',    'the',    'their',  'there',   'they',    'to',     'too',  'try',   'two',   'very',  'want',
+                'was',     'water',  'way',    'we',      'were',    'what',   'when', 'where', 'who',   'why',   'word',
                 'work',    'would',  'write',  'you',     'your'
             ];
 
@@ -40,7 +43,7 @@
                 const alphanumericCharacterIndex = Math.floor( Math.random() * alphanumericCharacters.length );
                 const character = alphanumericCharacters[ alphanumericCharacterIndex ];
 
-                document.getElementById( 'body' ).innerHTML = character;
+                document.querySelector( 'div' ).innerHTML = character;
 
                 alphanumericCharacters.splice( alphanumericCharacterIndex, 1 );
             }
@@ -51,6 +54,6 @@
         </script>
     </head>
     <body onclick = "displayCharacter()" onload = "pageLoad()">
-        <div id = "body"></div>
+        <div></div>
     </body>
 </html>
