@@ -27,6 +27,7 @@
             }
 
             span {
+                font-size: 8px;
                 left: 0;
                 position: absolute;
                 top: 0;
@@ -53,7 +54,7 @@
 
                 alphanumericCharacters.splice( alphanumericCharacterIndex, 1 );
 
-                document.querySelector( 'span' ).innerHTML = character.length;
+                document.querySelector( 'span' ).innerHTML = alphanumericCharacters.length;
             }
 
             function pageLoad() {
