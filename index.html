@@ -25,6 +25,12 @@
                 top: 50%;
                 transform: translate( -50%, -50% );
             }
+
+            span {
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
         </style>
         <script>
             let alphanumericCharacters = [
@@ -46,6 +52,8 @@
                 document.querySelector( 'div' ).innerHTML = character;
 
                 alphanumericCharacters.splice( alphanumericCharacterIndex, 1 );
+
+                document.querySelector( 'span' ).innerHTML = character.length;
             }
 
             function pageLoad() {
@@ -54,6 +62,7 @@
         </script>
     </head>
     <body onclick = "displayCharacter()" onload = "pageLoad()">
+        <span></span>
         <div></div>
     </body>
 </html>
